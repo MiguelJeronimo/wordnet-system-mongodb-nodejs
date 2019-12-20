@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Wordnet</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <link rel="stylesheet" href="interfaz/css/estilos.css">
+    <link href="https://fonts.googleapis.com/css?family=Ubuntu&display=swap" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/62c480e0b6.js" crossorigin="anonymous"></script>
+    <link href="https://fonts.googleapis.com/css?family=Lexend+Deca&display=swap" rel="stylesheet"> 
+
+</head>
+
+<body>
+
+    <div class="wrapper">
+        <!-- Sidebar  -->
+        <nav id="sidebar">
+            <div class="sidebar-header text-center">
+                <h4 class="mb-0">Wordnet System</h4>
+                <p style="color: white;" >Interface Made By Cris</p>
+                <strong>WT</strong>
+            </div>
+
+            <ul class="list-unstyled components">
+                <li class="active">
+                    <a href="#homeSubmenu">
+                        <i class="fas fa-home"></i>
+                        Home
+                    </a>
+                </li>
+                <li>
+                    <a href="#pageSubmenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle" style="">
+                        <i class="fab fa-get-pocket"></i>
+                        Commercial Services
+                    </a>
+                    <ul class="collapse list-unstyled" id="pageSubmenu">
+                        <li>
+                            <a href="#">Page 1</a>
+                        </li>
+                        <li>
+                            <a href="#">Page 2</a>
+                        </li>
+                        <li>
+                            <a href="#">Page 3</a>
+                        </li>
+                    </ul>
+                    <a href="#">
+                        <i class="fas fa-briefcase"></i>
+                        About
+                    </a>
+                </li>
+            </ul>
+
+        </nav>
+
+        <!-- Page Content  -->
+        <div id="content">
+
+            <nav class="navbar navbar-expand-lg navbar-light bg-light">
+                <div class="container-fluid">
+
+                    <button type="button" id="sidebarCollapse" class="btn btn-info" style="background-color: black;">
+                        <i class="fas fa-align-left"></i>
+                        <span>Toggle Sidebar</span>
+                    </button>
+                </div>
+            </nav>
+
+            <div class="container-fluid">
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <div class="borde pt-2 pl-2 mb-3">
+                                        <h5 class="title"><i class="fa fa-receipt"></i> Select your commercial service</h5>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-md-4 mb-4">
+                                            <a href="/form" target="_blank" onclick="window.open(this.href, this.target, 'width=1280,height=720'); return false;" class="nav-link">
+                                            <div class="card transparencia">
+                                                <div class="card-body text-center">
+                                                    <i class="fa fa-file-invoice fa-2x" aria-hidden="true"></i>
+                                                    <h4 class="mt-2">Comercial Invoice</h4>
+                                                    <span>New commercial invoice</span>
+                                                </div>
+                                            </div>
+                                        </a>
+                                        </div>
+                                        <div class="col-md-4 mb-4">
+                                                <a href="html/tax.html" class="nav-link">
+                                            <div class="card transparencia">
+                                                <div class="card-body text-center">
+                                                    <i class="fa fa-file-invoice-dollar fa-2x" aria-hidden="true"></i>
+                                                    <h4 class="mt-2">Tax Procedure</h4>
+                                                    <span>New tax procedure</span>
+                                                </div>
+                                            </div>
+                                            </a>
+                                        </div>
+                                        <div class="col-md-4 mb-4">
+                                                <a href="/list" class="nav-link" target="_blank" onclick="window.open(this.href, this.target, 'width=1280,height=720'); return false;" >
+                                            <div class="card transparencia">
+                                                <div class="card-body text-center">
+                                                    <i class="fa fa-list fa-2x" aria-hidden="true"></i>
+                                                    <h4 class="mt-2">Existing Invoices</h4>
+                                                    <span>All Invoices</span>
+                                                </div>
+                                            </div>
+                                            </a>
+                                        </div>
+                                        <div class="col-md-4 mb-4">
+                                                <a href="#" class="nav-link" target="_blank" onclick="window.open(this.href, this.target, 'width=1280,height=720'); return false;">
+                                            <div class="card transparencia">
+                                                <div class="card-body text-center">
+                                                    <i class="fa fa-list-ul fa-2x" aria-hidden="true"></i>
+                                                    <h4 class="mt-2">Existing Taxs</h4>
+                                                    <span>All Tax</span>
+                                                </div>
+                                            </div>
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-12">
+                                <div class="row">
+                                    <div class="col-md-12">
+                                        <div class="borde pt-2 pl-2 mb-3">
+                                            <h5 class="title"><i class="fa fa-dolly-flatbed"></i> Inventory Services</h5>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-md-4 mb-4">
+                                                <a href="#" class="nav-link">
+                                                <div class="card transparencia">
+                                                    <div class="card-body text-center">
+                                                        <i class="fa fa-file-invoice fa-2x" aria-hidden="true"></i>
+                                                        <h4 class="mt-2">Comercial Invoice</h4>
+                                                        <span>New commercial invoice</span>
+                                                    </div>
+                                                </div>
+                                            </a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                    </div>
+                </div>
+
+        </div>
+    </div>
+
+    <script src="interfaz/js/jquery.js"></script>
+    <script src="interfaz/js/bootstrap.min.js"></script>
+    <script type="text/javascript">
+        $(document).ready(function () {
+            $('#sidebarCollapse').on('click', function () {
+                $('#sidebar').toggleClass('active');
+            });
+        });
+    </script>
+</body>
+
+</html>
+<% include partials/_footer %>

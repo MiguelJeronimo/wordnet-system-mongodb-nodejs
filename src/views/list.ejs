@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>List Of Invoices</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css" integrity="sha384-9gVQ4dYFwwWSjIDZnLEWnxCjeSWFphJiwGPXr1jddIhOegiu1FwO5qRGvFXOdJZ4" crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/css?family=Lexend+Deca&display=swap" rel="stylesheet"> 
+  </head>
+<body>
+      <!-- LIST -->
+      <div class="col-md-10">
+            <table class="table table-bordered table-hover">
+              <thead>
+                <tr>
+                  <th>N°</th>
+                  <th>Nombre</th>
+                  <th>Fecha</th>
+                  <th>Direccion</th>
+                  
+                  <th>Acciones</th>
+                </tr>
+              </thead>
+              <tbody>
+                <% for(var i=0; i < tasks.length; i++) { %>
+                  <tr>
+                    <td><%= i + 1%></td>
+                    <td><strong><%= tasks[i].title %></strong></td>
+                    <td><%= tasks[i].c1 %></td>
+                    <td><%= tasks[i].c2 %></td>
+                   
+                    <td>
+                      <!-- <a
+                        class="<%= tasks[i].status ? 'btn btn-success' : 'btn btn-dark'%>"
+                        href="/turn/<%= tasks[i]._id %>">Done</a> -->
+                      <a href="/delete/<%= tasks[i]._id %>"
+                        class="btn btn-danger">
+                        Delete
+                      </a>
+                      <a href="/edit/<%= tasks[i]._id %>" target="_blank" onclick="window.open(this.href, this.target, 'width=1280,height=720'); return false;" class="btn btn-info">
+                        Edit
+                      </a>
+                      <a href="/print1/<%= tasks[i]._id %>" target="_blank" onclick="window.open(this.href, this.target, 'width=1280,height=720'); return false;" class="btn btn-success">
+                        Print
+                      </a>
+                    
+                    </td>
+                  </tr>
+                <% } %>
+              </tbody>
+            </table>
+</body>
+</html>
+<% include partials/_header %>
+<% include partials/_footer %>
+
+<style>
+* {
+  font-family: 'Lexend Deca', sans-serif;
+}
+</style>

@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Print </title>
+    <link href="https://fonts.googleapis.com/css?family=Lexend+Deca&display=swap" rel="stylesheet">  
+ <script
+ src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
+ integrity="sha256-pasqAKBDmFT4eHoN2ndd6lN370kFiGUFyTiUHWhU7k8="
+ crossorigin="anonymous"></script>
+
+ <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css" integrity="sha384-9gVQ4dYFwwWSjIDZnLEWnxCjeSWFphJiwGPXr1jddIhOegiu1FwO5qRGvFXOdJZ4" crossorigin="anonymous">
+</head>
+
+<body>
+
+    <style>
+    * {
+
+        font-family: 'Lexend Deca', sans-serif;
+    }
+    </style>
+    <form action="/edit/<%= task._id %>" method="post">
+ 
+        <% include partials/_header %>
+        <link href="https://fonts.googleapis.com/css?family=Lexend+Deca&display=swap" rel="stylesheet"> 
+        <style>
+        * {
+          font-family: 'Lexend Deca', sans-serif;
+        }
+        </style>
+ 
+        <div class="container">
+          <div class="row">
+            <!--FORM-->
+          
+                  <form action="/edit/<%= task._id %>" method="post">
+                    <div class="col-md-4 form-group">
+                      <input type="text" class="form-control" name="title" placeholder="Nombre" id="nombre" placeholder="Nombre" class=" form-control" style="width: 200px;" value="<%= task.title %>" >
+                    </div>
+                    <div class="col-md-4 form-group">
+                      <input type="text" name="c1" class="form-control" placeholder="dd/mm/yyyy" style="width: 200px;" value="<%= task.c1 %>" >
+                    </div>
+                  </div>
+                  <div class="row d-flex align-items-center">
+                      <div class="col-md-4 form-group">
+                        <textarea id="direccion"  name="c2" placeholder="Direccion" class=" form-control" cols="1" rows="2"><%= task.c2 %>"</textarea>
+                      </div>
+                      <div class="col-md-4 form-group">
+                        <input type="text"  name="c3" class="form-control" placeholder="dd/mm/yyyy" value="<%= task.c3 %>" >
+                      </div>
+                      <div class="col-md-4 form-group">
+                          <input type="text" name="c4" class="form-control" id="departamento" placeholder="Departamento" value="<%= task.c4 %>"  value="Departamento">
+                        </div>
+                    </div>
+                    <div class="row">
+                      <div class="col-md-4 form-group">
+                        <input type="text" class="form-control" name="c5" placeholder="IVA" value="<%= task.c5 %>" >
+                      </div>
+                      <div class="col-md-4 form-group">
+                          <input type="text" class="form-control" name="c6" placeholder="NIT" id="nit" value="<%= task.c6 %>" >
+                        </div>
+                    </div>
+                    <div class="row">
+                      <div class="col-md-4 form-group">
+                          <input type="text" class="form-control" name="p1" placeholder="Giro" id="giro" value="<%= task.p1 %>" >
+                        </div>
+                    </div>
+                    <div class="row">
+                      <div class="col-md-4 form-group">
+                        <input type="text" class="form-control" name="p2" placeholder="Condiciones de pago" id="condicionesdepago" value="<%= task.p2 %>"  >
+                      </div>
+                      <div class="col-md-4 form-group">
+                          <input type="text" class="form-control"  name="p3" placeholder="Venta a cuenta de" id="ventade" value="<%= task.p3 %>" >
+                        </div>
+                    </div>
+                    <table class="table">
+                      <thead>
+                        <tr>
+                          <th scope="col" onclick="addProduct()">#</th>
+                          <th scope="col">Cantidad</th>
+                          <th scope="col">Producto</th>
+                          <th scope="col">P.U</th>
+                          <th scope="col">P.P.P</th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        <tr>
+                          <th scope="row">1</th>
+                          <td><input type="text" name="p4" id="cantidad1" class="form-control" value="<%= task.p4 %>" ></td>
+                          <td><input type="text" name="p5" id="producto1" class="form-control" value="<%= task.p5 %>" ></td>
+                          <td><input type="text" name="p6" id="preciouni1" class="form-control" value="<%= task.p6 %>" ></td>
+                          <td><input type="text" name="p7" id="" class="form-control" value="<%= task.p7 %>" ></td>
+                        </tr>
+                        <tr>
+                          <th scope="row">2</th>
+                          <td><input type="text" name="p8" id="cantidad2" class="form-control" value="<%= task.p8 %>" ></td>
+                          <td><input type="text" name="p9" id="producto2" class="form-control" value="<%= task.p9 %>" ></td>
+                          <td><input type="text" name="p10" id="preciouni2" class="form-control" value="<%= task.p10 %>" ></td>
+                          <td><input type="text" name="p11" id="" class="form-control" value="<%= task.p11 %>" ></td>
+                        </tr>
+                        <tr>
+                          <th scope="row">3</th>
+                          <td><input type="text" name="p12" id="cantidad3" class="form-control" value="<%= task.p12 %>" ></td>
+                          <td><input type="text" name="p13" id="producto3" class="form-control" value="<%= task.p13 %>" ></td>
+                          <td><input type="text" name="p14" id="preciouni3" class="form-control" value="<%= task.p14 %>" ></td>
+                          <td><input type="text" name="p15" id="" class="form-control" value="<%= task.p15 %>" ></td>
+                        </tr>
+                        <tr id="total">
+                          <th scope="row"></th>
+                          <td></td>
+                          <td></td>
+                          <td></td>
+                          <td><input type="text" name="p16" id="" class="form-control" placeholder="Total"value="<%= task.p16 %>" ></td>
+                        </tr>
+                      </tbody>
+                    </table>
+                    
+              
+                  </form>
+        
+        
+        <% include partials/_footer%>
+        
+    </form>
+ 
+    <button class="btn btn-success btn-block oculto-impresion" onclick="print()" >Print</button>
+                   
+
+
+
+        <style>
+
+            
+
+@media print{
+
+.oculto-impresion, .oculto-impresion *{
+
+  display: none !important;
+
+}
+
+}
+
+@media screen {
+* {
+    font-family: 'Lexend Deca', sans-serif;
+}
+}
+
+        </style>
+       
+      
+</body>
+</html>

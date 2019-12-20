@@ -1,0 +1,197 @@
+<% include partials/_header %>
+
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Index</title>
+    <link rel="stylesheet" href="./css/bootstrap.min.css">
+    <link rel="stylesheet" href="./css/estilos.css">
+    <link href="https://fonts.googleapis.com/css?family=Lexend+Deca&display=swap" rel="stylesheet"> 
+    <!--<script src="https://kit.fontawesome.com/62c480e0b6.js" crossorigin="anonymous"></script>-->
+    <script src="js-2/calc.js"></script>
+    <script src="js-2/savetax.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/6.2.4/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/6.2.4/firebase-firestore.js"></script>
+</head>
+
+<body>
+
+    <div class="wrapper">
+        <!-- Sidebar  -->
+        <nav id="sidebar">
+            <div class="sidebar-header text-center">
+                <h4 class="mb-0">Wordnet System</h4>
+                <strong>WT</strong>
+            </div>
+
+            <ul class="list-unstyled components">
+                <li class="active">
+                    <a href="#homeSubmenu">
+                        <i class="fas fa-home"></i>
+                        Home
+                    </a>
+                </li>
+                <li>
+                    <a href="#pageSubmenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">
+                        <i class="fab fa-get-pocket"></i>
+                        Commercial Services
+                    </a>
+                    <ul class="collapse list-unstyled" id="pageSubmenu">
+                        <li>
+                            <a href="#">Page 1</a>
+                        </li>
+                        <li>
+                            <a href="#">Page 2</a>
+                        </li>
+                        <li>
+                            <a href="#">Page 3</a>
+                        </li>
+                    </ul>
+                    <a href="#">
+                        <i class="fas fa-briefcase"></i>
+                        About
+                    </a>
+                </li>
+            </ul>
+
+        </nav>
+
+        <!-- Page Content  -->
+        <div id="content">
+
+            <nav class="navbar navbar-expand-lg navbar-light bg-light">
+                <div class="container-fluid">
+
+                    <button type="button" id="sidebarCollapse" class="btn btn-info">
+                        <i class="fas fa-align-left"></i>
+                        <span>Toggle Sidebar</span>
+                    </button>
+                </div>
+            </nav>
+
+            <div class="container-fluid">
+                <h4>New Tax</h4>
+ 
+                   <form action="/add" method="post">
+                    <div class="row">
+                        <div class="col-md-4 form-group">
+                          <input type="text" class="form-control" name="title" placeholder="Nombre" id="nombre" placeholder="Nombre" class=" form-control" style="padding: 3%" value="Nombre:" >
+                        </div>
+                        <div class="col-md-4 form-group">
+                          <input type="text" name="c1" class="form-control" placeholder="dd/mm/yyyy">
+                        </div>
+                      </div>
+                      <div class="row d-flex align-items-center">
+                          <div class="col-md-4 form-group">
+                            <textarea id="direccion"  name="c2" placeholder="Direccion" class=" form-control" cols="1" rows="2"></textarea>
+                          </div>
+                          <div class="col-md-4 form-group">
+                            <input type="text"  name="c3" class="form-control" placeholder="dd/mm/yyyy">
+                          </div>
+                          <div class="col-md-4 form-group">
+                              <input type="text" name="c4" class="form-control" id="departamento" placeholder="Departamento"   value="Departamento">
+                            </div>
+                        </div>
+                        <div class="row">
+                          <div class="col-md-4 form-group">
+                            <input type="text" class="form-control" name="c5" placeholder="IVA">
+                          </div>
+                          <div class="col-md-4 form-group">
+                              <input type="text" class="form-control" name="c6" placeholder="NIT" id="nit" >
+                            </div>
+                        </div>
+                        <div class="row">
+                          <div class="col-md-4 form-group">
+                              <input type="text" class="form-control" name="p1" placeholder="Giro" id="giro">
+                            </div>
+                        </div>
+                        <div class="row">
+                          <div class="col-md-4 form-group">
+                            <input type="text" class="form-control" name="p2" placeholder="Condiciones de pago" id="condicionesdepago">
+                          </div>
+                          <div class="col-md-4 form-group">
+                              <input type="text" class="form-control"  name="p3" placeholder="Venta a cuenta de" id="ventade" >
+                            </div>
+                        </div>
+                        <table class="table">
+                          <thead>
+                            <tr>
+                              <th scope="col" onclick="addProduct()">#</th>
+                              <th scope="col">Cantidad</th>
+                              <th scope="col">Producto</th>
+                              <th scope="col">P.U</th>
+                              <th scope="col">P.P.P</th>
+                            </tr>
+                          </thead>
+                          <tbody>
+                            <tr>
+                              <th scope="row">1</th>
+                              <td><input type="text" name="p4" id="cantidad1" class="form-control"></td>
+                              <td><input type="text" name="p5" id="producto1" class="form-control"></td>
+                              <td><input type="text" name="p6" id="preciouni1" class="form-control"></td>
+                              <td><input type="text" name="p7" id="" class="form-control"></td>
+                            </tr>
+                            <tr>
+                              <th scope="row">2</th>
+                              <td><input type="text" name="p8" id="cantidad2" class="form-control"></td>
+                              <td><input type="text" name="p9" id="producto2" class="form-control"></td>
+                              <td><input type="text" name="p10" id="preciouni2" class="form-control"></td>
+                              <td><input type="text" name="p11" id="" class="form-control"></td>
+                            </tr>
+                            <tr>
+                              <th scope="row">3</th>
+                              <td><input type="text" name="p12" id="cantidad3" class="form-control"></td>
+                              <td><input type="text" name="p13" id="producto3" class="form-control"></td>
+                              <td><input type="text" name="p14" id="preciouni3" class="form-control"></td>
+                              <td><input type="text" name="p15" id="" class="form-control"></td>
+                            </tr>
+                            <tr id="total">
+                              <th scope="row"></th>
+                              <td></td>
+                              <td></td>
+                              <td></td>
+                              <td><input type="text" name="p16" id="" class="form-control" placeholder="Total"></td>
+                            </tr>
+                          </tbody>
+                        </table>
+                        <button class="btn btn-primary  btn-block oculto-impresion"  >
+                          Save Tax
+                          </button>
+                        <button class="btn btn-success btn-block oculto-impresion" onclick="print()" >Print</button>
+                   
+              </div>      
+          </div>
+                   </form>
+
+    <script src="./js/jquery.js"></script>
+    <script src="./js/bootstrap.min.js"></script>
+    <script type="text/javascript">
+        $(document).ready(function () {
+            $('#sidebarCollapse').on('click', function () {
+                $('#sidebar').toggleClass('active');
+            });
+        });
+    </script>
+
+    <script>
+        function addProduct() {
+            var tbl = document.getElementsByTagName("tbody").innerHTML += `
+            <tr>
+              <th scope="row">3</th>
+              <td><input type="text" name="" id="" class="form-control"></td>
+              <td><input type="text" name="" id="" class="form-control"></td>
+              <td><input type="text" name="" id="" class="form-control"></td>
+              <td><input type="text" name="" id="" class="form-control"></td>
+            </tr>
+            `;
+        }
+    </script>
+</body>
+
+</html>
+<% include partials/_footer %>
